@@ -1,0 +1,20 @@
+$feature-flags: (
+  enable-css-custom-properties: true
+);
+
+@import "~@carbon/themes/scss";
+@import "~@carbon/colors/scss";
+@import "~@carbon/motion/scss/motion.scss";
+
+// Use the light theme by default
+$carbon--theme: $carbon--theme--g10;
+
+// Use the g10 theme wherever this class is added
+.light {
+  @include carbon--theme($theme: $carbon--theme--g10, $emit-custom-properties: true);
+}
+// Use the g90 theme wherever this class is added
+.dark {
+  @include carbon--theme($theme: $carbon--theme--g90, $emit-custom-properties: true);
+}
+
