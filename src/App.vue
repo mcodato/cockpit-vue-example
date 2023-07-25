@@ -19,14 +19,14 @@ export default class App extends Vue {
   private user = "";
 
   runCommand(): void {
-    // const process = window.cockpit.spawn("whoami");
-    // process
-    //   .then((data: string) => {
-    //     this.user = data;
-    //   })
-    //   .catch(() => {
-    //     this.user = "Error";
-    //   });
+    const process = window.cockpit.spawn("whoami");
+    process
+      .then((data: string) => {
+        this.user = data;
+      })
+      .catch(() => {
+        this.user = "Error";
+      });
   }
 }
 </script>
